@@ -139,9 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="funclib.h" />
-    <ClInclude Include="oldLib.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="testLib.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ThePokerGame.rc" />
@@ -149,8 +147,6 @@
   <ItemGroup>
     <ClCompile Include="funcLib.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="oldLib.cpp" />
-    <ClCompile Include="testLib.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

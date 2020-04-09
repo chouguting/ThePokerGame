@@ -3,8 +3,7 @@
 #include <time.h>
 
 #include "funclib.h"
-#include "oldLib.h"
-#include "testLib.h"
+
 
 
 void gameInit();
@@ -73,7 +72,7 @@ int main()
 		else if (operation == 2)
 		{
 			shuffle(deck);
-			dealManyPlayer(playerCount, deck);
+			//dealManyPlayer(playerCount, deck);
 			system("pause");
 
 			int changeCardIndexBuffer[4][3]; //暫存要換的牌是哪些
