@@ -73,7 +73,7 @@ int main()
 		{
 			shuffle(deck);
 			//dealManyPlayer(playerCount, deck);
-			system("pause");
+			//system("pause");
 
 			int changeCardIndexBuffer[4][3]; //暫存要換的牌是哪些
 
