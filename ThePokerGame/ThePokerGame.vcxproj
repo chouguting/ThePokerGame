@@ -139,10 +139,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="funclib.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="ThePokerGame.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="funcLib.cpp" />
