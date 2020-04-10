@@ -4,7 +4,7 @@
 #include "funclib.h"
 
 
-int cardTypeScore[] = {0, 10, 30, 80, 100, 300, 500, 800, 1000};
+int cardTypeScore[] = {0, 60, 120, 200, 280, 360, 500, 800, 1000};
 
 void fillDeckFaceFirst(Card* const wDeck, const char* wFace[],
                        const char* wSuit[])
@@ -132,7 +132,6 @@ int isSpecialStraight(Card wDeck[], int size)
 	int lastFace = (wDeck[0].id) / 4;
 	for (i = 1; i < size - 1; i++)
 	{
-		//printf("FACE: %d LAST:%d\n", (wDeck[i].id) / 4,lastFace);
 		if ((wDeck[i].id) / 4 != lastFace + 1)
 		{
 			isspecialstraightraight = 0;
@@ -210,38 +209,35 @@ int determine(Card wDeck[], int size)
 	{
 		return 8; //同花順 1000分
 	}
-	else if (howManyOfaKind(4, wDeck, size) >= 1)
+	if (howManyOfaKind(4, wDeck, size) >= 1)
 	{
 		return 7; //四條 800分
 	}
-	else if (howManyOfaKind(3, wDeck, size) >= 1 && howManyOfaKind(2, wDeck, size) >= 1)
+	if (howManyOfaKind(3, wDeck, size) >= 1 && howManyOfaKind(2, wDeck, size) >= 1)
 	{
 		return 6; //葫蘆 500分
 	}
-	else if (isFlush(wDeck, size) == 1 && size > 3)
+	if (isFlush(wDeck, size) == 1 && size > 3)
 	{
-		return 5; //同花 300分
+		return 5; //同花 360分
 	}
-	else if ((isSpecialStraight(wDeck, size) == 1 || isStraight(wDeck, size) == 1) && size > 3)
+	if ((isSpecialStraight(wDeck, size) == 1 || isStraight(wDeck, size) == 1) && size > 3)
 	{
-		return 4; //順子 100分
+		return 4; //順子 280分
 	}
-	else if (howManyOfaKind(3, wDeck, size) >= 1)
+	if (howManyOfaKind(3, wDeck, size) >= 1)
 	{
-		return 3; //三條 80分
+		return 3; //三條 200分
 	}
-	else if (howManyOfaKind(2, wDeck, size) == 2)
+	if (howManyOfaKind(2, wDeck, size) == 2)
 	{
-		return 2; //二對 30分
+		return 2; //二對 120分
 	}
-	else if (howManyOfaKind(2, wDeck, size) == 1)
+	if (howManyOfaKind(2, wDeck, size) == 1)
 	{
-		return 1; //對子 10分
+		return 1; //對子 60分
 	}
-	else
-	{
-		return 0; //散牌 0分
-	}
+	return 0; //散牌 0分
 }
 
 
@@ -267,10 +263,7 @@ Card mostImportantCard(int multipleKind, Card wDeck[], int size)
 
 			return veryImoprtantCard;
 		}
-		else
-		{
-			i = i - sameCount;
-		}
+		i = i - sameCount;
 	}
 	return veryImoprtantCard;
 }

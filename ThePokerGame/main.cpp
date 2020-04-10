@@ -5,7 +5,6 @@
 #include "funclib.h"
 
 
-
 void gameInit();
 
 Card* handCard[4];
@@ -28,14 +27,13 @@ int main()
 {
 	////////////////////
 
-	srand(time(NULL));
+	srand(time(nullptr));
 	int i, j;
 
 
 	printf("歡迎來到神奇的撲克遊戲!!\n");
 
 
-	
 	gameInit();
 
 
@@ -45,7 +43,7 @@ int main()
 	int score[4] = {0};
 
 	system("cls");
-	while (1)
+	while (true)
 	{
 		printf("目前分數:");
 		for (i = 0; i < playerCount; i++)
@@ -72,8 +70,7 @@ int main()
 		else if (operation == 2)
 		{
 			shuffle(deck);
-			//dealManyPlayer(playerCount, deck);
-			//system("pause");
+
 
 			int changeCardIndexBuffer[4][3]; //暫存要換的牌是哪些
 
